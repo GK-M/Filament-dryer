@@ -708,7 +708,7 @@ void EnterFlagaa() {
     
                                   // PID
     pid.SetOutputLimits(0, 100);  // WYJŚCIE 0..100
-    pid.SetSampleTime(500);       // ms; grzałka jest wolna
+    pid.SetSampleTime(500);       // ms; 
     pid.SetMode(AUTOMATIC);
   }
 
