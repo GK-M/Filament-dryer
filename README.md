@@ -2,6 +2,13 @@
 
 DIY filament dryer project with a modeled enclosure, selected components, and custom control firmware.
 
+<p align="center">
+  <a href="photo.jpg">
+    <img src="photo.jpg" alt="Filament Dryer" width="200">
+  </a><br>
+  <sub>Filament Dryer </sub>
+</p>
+
 ## Key info
 
 * **Heating:** 3× heating mats (24V), total **250W**, with radiators/heatsinks -> max temp. 70°C
@@ -46,7 +53,8 @@ DIY filament dryer project with a modeled enclosure, selected components, and cu
 * XT60 connector
 * Fan 120mm 
 * 3× radiator/heatsink 
-* 1kg PETG 
+* 1kg PETG
+* Plexi 300x300
 
 
 ## Safety
