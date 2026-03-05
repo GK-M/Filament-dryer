@@ -12,6 +12,20 @@ DIY filament dryer project with a modeled enclosure, selected components, and cu
 * **Drying timer:** built-in timer to set the **drying duration**
 * **Fan control:** fan PWM adjusted based on humidity inside the dryer
 
+## Operation
+
+* Set **drying temperature** and **drying time** (timer)
+* Live preview of all key values on the LCD:
+  * readings from **all sensors**
+  * **PWM duty cycle** (heater/fan)
+  * current system status (heating/holding/safety state)
+
+## Planned features
+
+* Communication with a server via **MQTT**
+* Multiple **operating modes** (presets / profiles)
+* **Remote programming / updates** for the ESP32 (OTA)
+
 ## Components
 
 * **ESP32-C3**
