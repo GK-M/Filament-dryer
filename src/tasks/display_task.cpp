@@ -194,13 +194,32 @@ void vDisplayTask(void *pvParameters) {
             lcd.print("                    ");
             break;
         }
-         case Screen::TEMP_ERROR: {
-        lcd.setCursor(0,0);  
-        lcd.printf("");
-        
+                
+        case Screen::TEMP_ERROR: {
+            lcd.setCursor(0, 0);
+            lcd.print("====  OverHeat  ====");
+            lcd.setCursor(0, 1);
+            lcd.printf("Current DS_1: %5.1%d", ds_sensors.DS_1);
+            lcd.write(byte(0));
+            lcd.setCursor(0, 2);
+            lcd.printf("Current DS_2: %5.1%d", ds_sensors.DS_2);
+            lcd.write(byte(0));
+            lcd.setCursor(0, 3);
+            lcd.printf("Temp after error %4.1%d", Calibration::Temp_after_error);
         break;
         }
+        case Screen::MODE:
 
+        lcd.setCursor(0, 0);
+        lcd.print("Current MODE: ");
+        lcd.setCursor(0, 1);
+        lcd.printf("Set Temperature: %3.0f",pid_data.Setpoint);
+        lcd.setCursor(0, 2);
+        lcd.print("     Zakonczone     ");
+        lcd.setCursor(0, 3);
+        lcd.print("====================");
+
+        break;
         default:
             break;
         }
