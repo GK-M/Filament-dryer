@@ -69,11 +69,9 @@ void vControlTask(void *pvParameters) {
         pid.Compute();
         ledcWrite(0, pid_data.Output); // kanał 0 jest przypisany do pinu COOK_PWM
         //LOG("Output is equail: %.1f",control_status.Output);
-        pid_data.Output = map(pid_data.Output, 0, 1023, 0, 100);
+               
+        control_status.active = (pid_data.Output > 0);
 
-
-        if(pid_data.Output > 0) control_status.active = true;
-        else control_status.active = false;
 
         //Zabezpiecznie przed zbyt wysoką temp. na matach
         if(ds_sensors.DS_1 > Calibration::Max_DS_temperature ||
@@ -82,7 +80,7 @@ void vControlTask(void *pvParameters) {
             pid_data.Setpoint = 0.0;
             pid_data.Output = 0.0;
             pid_data.error = true;
-            xQueueOverwrite(xSetpointQueue,&pid);
+            xQueueOverwrite(xSetpointQueue,&pid_data);
             LOG("Zabezpieczenie przed zbyt dużą temperaturą aktywowane pid_data.error = %d",pid_data.error);
         }else if (ds_sensors.DS_1 < Calibration::Temp_after_error &&
                   ds_sensors.DS_2 < Calibration::Temp_after_error &&
@@ -94,7 +92,7 @@ void vControlTask(void *pvParameters) {
         
         
 
-        control_status.Output = pid_data.Output;
+        control_status.Output = pid_data.Output * 100.0f / 1023.0f;
         LOG("Output is equail: %.1f",control_status.Output);
         control_status.Setpoint = pid_data.Setpoint;
 
