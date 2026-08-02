@@ -86,7 +86,7 @@ zeroes the setpoint at 110 °C and refuses to re-arm until every mat is back und
 
 ---
 
-## 8. Finished v1
+## 8. Finished v2
 
 <img src="../images/hero.jpg" alt="Finished dryer" width="620">
 
