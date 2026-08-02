@@ -135,7 +135,7 @@ Autodesk Inventor parts (`.ipt`) and assemblies (`.iam`), with neutral `.stp` ex
 
 | File | Part | Material |
 |---|---|---|
-| `base.stl` | chamber base, v2 perforation pattern | PETG |
+| `base.stl` | chamber base, v2 perforation pattern | ABS |
 | `screen_mount.stl` | display mount | **ABS** (PETG deforms near the warm wall) |
 | `screen_v2.stl` | display bezel, v2 | ABS |
 
