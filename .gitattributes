@@ -1,0 +1,18 @@
+# Normalise line endings for text
+* text=auto eol=lf
+
+# Treat as binary — never diff or merge these
+*.stl    binary
+*.stp    binary
+*.step   binary
+*.ipt    binary
+*.iam    binary
+*.dwg    binary
+*.3mf    binary
+*.jpg    binary
+*.png    binary
+*.mp4    binary
+
+# Keep CAD and media out of language statistics
+hardware/**  linguist-vendored
+docs/media/** linguist-vendored
